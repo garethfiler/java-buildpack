@@ -53,12 +53,12 @@ common: &default_settings
   # The levels in increasing order of verboseness are:
   #   off, severe, warning, info, fine, finer, finest
   # Default is info.
-  log_level: finest
+  log_level: info
 
   # Log all data sent to and from New Relic in plain text.
   # This setting is dynamic, so changes do not require restarting your application.
   # Default is false.
-  audit_mode: true
+  audit_mode: false
 
   # The number of backup log files to save.
   # Default is 1.
@@ -248,6 +248,12 @@ common: &default_settings
       enabled: false
 
     com.newrelic.instrumentation.spring-aop-2:
+      enabled: false
+      
+    com.newrelic.instrumentation.java.completable-future-jdk8u40:
+      enabled: false
+
+    com.newrelic.instrumentation.java.completable-future-jdk8:
       enabled: false
 
     # Classes loaded by classloaders in this list will not be instrumented.
